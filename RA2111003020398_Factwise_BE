@@ -1,0 +1,48 @@
+Qno.02
+class solution:
+public:
+   int maxScore(vector<int>&cardPoints,int k){
+     int n=cardPoints.size();
+     int s=accumulate(cardPoints.end(),0);
+     int ans=s;
+     for(int i=0;i<k;i++){
+         s+=cardPoints[i]-cardPoints[n-k+i];
+         ans=max(ans,s);
+     }
+     return ans;
+   }
+};
+Qno.01
+#include<iostream>
+using namespace std;
+string change(unsigned long long x)
+    string gap= " And ";
+    string tensones=" ";
+switch(x)
+  case 0: return "Zero";
+  case 1: return "One";
+  case 2: return "two";
+  case 3: return "three";
+  case 4: return "four";
+  case 5: return "five";
+case 6: return "six";
+case 7: return "seven";
+case 8: return "eight";
+case 9: return "nine";
+case 10: return "ten";
+case 11: return "eleven";
+case 12: return "twelve";
+case 13: return "thirteen";
+case 14: return "fourteen";
+case 15: return "fifteen";
+case 16: return "sixteen";
+case 17: return "seventeen";
+case 18: return "eighteen";
+case 19: return "nineteen";
+default:break;
+}
+if(x=20&&x<100){
+auto ones=x%10;
+auto tens=x/10;
+auto strOnes=(ones!=0)?tensones+change(ones):"";
+switch tens
